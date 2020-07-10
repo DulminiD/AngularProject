@@ -1,0 +1,11 @@
+<div style="margin: 35px">
+  <ul class="products">
+    <li *ngFor="let product of products" class="li">
+      <a routerLink="/getOneData/{{product.id}}" class="a" (click)="onClick()">
+        <span class="badge">{{product.id}}</span> {{product.name}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+
