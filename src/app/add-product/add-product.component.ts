@@ -8,7 +8,7 @@ import {ProductService} from '../shared/product.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  public productModel = new ProductModel('5', 'Laptop', '2000');
+  public productModel = new ProductModel(5, 'Laptop', '2000');
   // tslint:disable-next-line:variable-name
   constructor(private _productService: ProductService) { }
 
