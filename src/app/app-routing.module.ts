@@ -4,12 +4,14 @@ import {GetProductsComponent} from './get-products/get-products.component';
 import {AddProductComponent} from './add-product/add-product.component';
 import {GetOneProductComponent} from './get-one-product/get-one-product.component';
 import {DeleteProductComponent} from './delete-product/delete-product.component';
+import {EditProductComponent} from './edit-product/edit-product.component';
 
 const routes: Routes = [
   { path: 'getData', component: GetProductsComponent },
   { path: 'addData', component: AddProductComponent },
   { path: 'getOneData/:id', component: GetOneProductComponent },
-  { path: 'deleteData', component: DeleteProductComponent }
+  { path: 'deleteData', component: DeleteProductComponent },
+  { path: 'editData', component: EditProductComponent }
 ];
 
 @NgModule({

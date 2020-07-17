@@ -1,0 +1,14 @@
+<div class="container-fluid" style="margin: 35px">
+  <h1>Edit Product Form</h1>
+  <form #productForm="ngForm" (ngSubmit)="onSubmit()" style="margin-right: 650px">
+    <div class="form-group">
+      <label>ID</label>
+      <input type="text"  name="id" class="form-control" [(ngModel)]="productModel.id">
+      <label>Name</label>
+      <input type="text"  name="name" class="form-control" [(ngModel)]="productModel.name">
+      <label>Price</label>
+      <input type="text"  name="price" class="form-control" [(ngModel)]="productModel.price">
+    </div>
+    <button class="btn btn-warning" type="submit">Add Product</button>
+  </form>
+</div>
