@@ -9,8 +9,11 @@ import {IProduct} from '../shared/product';
 })
 export class GetProductsComponent implements OnInit {
 
+  // Start Region variables
   public products: IProduct;
   public getone: boolean;
+  // End Region variables
+
   // tslint:disable-next-line:variable-name
   constructor(private _productService: ProductService) { }
 
