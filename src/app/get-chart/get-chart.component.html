@@ -1,0 +1,25 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div *ngIf="next ; else elseBlock" class="carousel-item active">
+      <app-get-doughnut-chart></app-get-doughnut-chart>
+    </div>
+    <ng-template #elseBlock>
+      <div class="carousel-item active" >
+        <app-get-bar-chart></app-get-bar-chart>
+      </div>
+    </ng-template>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span (click)="onClick()" class="carousel-control-prev-icon bg-warning" aria-hidden="true" ></span>
+    <span class="sr-only" >Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span (click)="onClick()" class="carousel-control-next-icon bg-warning" aria-hidden="true" ></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+

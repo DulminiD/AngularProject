@@ -9,7 +9,12 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./get-one-product.component.css']
 })
 export class GetOneProductComponent implements OnInit {
+
+  // Start Region variables
   public product: IProduct;
+  // End Region variables
+
+
   // tslint:disable-next-line:variable-name
   constructor(private _productService: ProductService, private route: ActivatedRoute) { }
 

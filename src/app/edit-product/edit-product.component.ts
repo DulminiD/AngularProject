@@ -10,14 +10,19 @@ import {IProduct} from '../shared/product';
   styleUrls: ['./edit-product.component.css']
 })
 export class EditProductComponent implements OnInit {
+
+  // Start Region variables
   public productModel = new ProductModel(null, '', '');
   product: IProduct;
+  // End Region variables
+
   // tslint:disable-next-line:variable-name
   constructor(private _productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
+  // Submit Button clicked
   onSubmit(): void {
     // Have to send the product model
     this._productService.editProduct(this.productModel.id , this.productModel ).subscribe(
