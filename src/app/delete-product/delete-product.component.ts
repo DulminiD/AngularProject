@@ -9,12 +9,17 @@ import {ProductService} from '../shared/product.service';
 })
 export class DeleteProductComponent implements OnInit {
 
+  // Start Region variables
   public product;
   public id = 1;
+  // End Region variables
+
   // tslint:disable-next-line:variable-name
   constructor(private _productService: ProductService) { }
   ngOnInit(): void {
   }
+
+  // Submit Button clicked
   onSubmit(): void{
     console.log(this.id);
     this._productService.deleteProduct(this.id)
