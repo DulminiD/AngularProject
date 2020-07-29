@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from '../shared/product.service';
-import {IProduct} from '../shared/product';
+import {ProductService} from '../shared/services/product.service';
+import {ProductModel} from '../shared/models/product-model';
 
 @Component({
   selector: 'app-get-products',
@@ -10,7 +10,7 @@ import {IProduct} from '../shared/product';
 export class GetProductsComponent implements OnInit {
 
   // Start Region variables
-  public products: IProduct;
+  public products: ProductModel;
   public getone: boolean;
   // End Region variables
 
@@ -19,7 +19,7 @@ export class GetProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this._productService.getProducts()
-      .subscribe(data => this.products = data);
+      .then(data => this.products = data);
   }
   onClick(): void{
     this.getone = true;

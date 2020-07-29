@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {IProduct} from '../shared/product';
-import {ProductService} from '../shared/product.service';
+import {ProductModel} from '../shared/models/product-model';
+import {ProductService} from '../shared/services/product.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 export class GetOneProductComponent implements OnInit {
 
   // Start Region variables
-  public product: IProduct;
+  public product: ProductModel;
   // End Region variables
 
 
@@ -21,6 +21,6 @@ export class GetOneProductComponent implements OnInit {
   ngOnInit(): void {
     const id1 = +this.route.snapshot.paramMap.get('id');
     this._productService.getProduct(id1)
-      .subscribe(data => this.product = data);
+      .then((data) => { this.product = data; console.log(data); } );
   }
 }

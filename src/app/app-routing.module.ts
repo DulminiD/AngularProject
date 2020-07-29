@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {GetProductsComponent} from './get-products/get-products.component';
-import {AddProductComponent} from './add-product/add-product.component';
-import {GetOneProductComponent} from './get-one-product/get-one-product.component';
-import {DeleteProductComponent} from './delete-product/delete-product.component';
-import {EditProductComponent} from './edit-product/edit-product.component';
-import {GetChartComponent} from './get-chart/get-chart.component';
+import {GetProductsComponent} from './product/get-products/get-products.component';
+import {AddProductComponent} from './product/add-product/add-product.component';
+import {GetOneProductComponent} from './product/get-one-product/get-one-product.component';
+import {DeleteProductComponent} from './product/delete-product/delete-product.component';
+import {EditProductComponent} from './product/edit-product/edit-product.component';
+import {GetChartComponent} from './product/get-chart/get-chart.component';
 
 const routes: Routes = [
   { path: 'getData', component: GetProductsComponent },
