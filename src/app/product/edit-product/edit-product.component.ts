@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductModel} from '../shared/product-model';
-import {ProductService} from '../shared/product.service';
+import {ProductModel} from '../shared/models/product-model';
+import {ProductService} from '../shared/services/product.service';
 import {ActivatedRoute} from '@angular/router';
-import {IProduct} from '../shared/product';
 
 @Component({
   selector: 'app-edit-product',
@@ -13,7 +12,7 @@ export class EditProductComponent implements OnInit {
 
   // Start Region variables
   public productModel = new ProductModel(null, '', '');
-  product: IProduct;
+  product: ProductModel;
   // End Region variables
 
   // tslint:disable-next-line:variable-name
@@ -25,7 +24,7 @@ export class EditProductComponent implements OnInit {
   // Submit Button clicked
   onSubmit(): void {
     // Have to send the product model
-    this._productService.editProduct(this.productModel.id , this.productModel ).subscribe(
+    this._productService.editProduct(this.productModel.id , this.productModel ).then(
       data => this.product = data,
       error => console.log('Error', error)
     );

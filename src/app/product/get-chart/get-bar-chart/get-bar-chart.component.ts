@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from '../../shared/product.service';
-import {IProduct} from '../../shared/product';
+import {ProductService} from '../../shared/services/product.service';
+import {ProductModel} from '../../shared/models/product-model';
 
 @Component({
   selector: 'app-get-bar-chart',
@@ -10,7 +10,7 @@ import {IProduct} from '../../shared/product';
 export class GetBarChartComponent implements OnInit {
 
   // Start Region variables
-  public products: IProduct;
+  public products: ProductModel;
   xArray = [];
   yArray = [];
   length = 0;
@@ -33,20 +33,18 @@ export class GetBarChartComponent implements OnInit {
   ngOnInit(): void {
     this.length = 0;
     this._productService.getProducts()
-      .subscribe(data => {this.products = data;
+      .then(data => {this.products = data;
+                     console.log(data);
                           // @ts-ignore
-                          for (const len of data){
+                     for (const len of data){
                             this.length++;
                             this.yArray.push(len.price);
                           }
-                          console.log(this.length);
         // tslint:disable-next-line:prefer-for-of
-                          for (let i = 0 ; i < this.length; i++){
+                     for (let i = 0 ; i < this.length; i++){
                             this.xArray.push(i + '');
                           }
-                          console.log(this.xArray);
-                          console.log(this.yArray);
-                          this.barChartLabels = this.xArray;
+                     this.barChartLabels = this.xArray;
       });
   }
 

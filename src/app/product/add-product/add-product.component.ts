@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductModel} from '../shared/product-model';
-import {ProductService} from '../shared/product.service';
+import {ProductModel} from '../shared/models/product-model';
+import {ProductService} from '../shared/services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -20,7 +20,7 @@ export class AddProductComponent implements OnInit {
 
   // Clicked submit button
   onSubmit(): void{
-    this._productService.addProduct(this.productModel).subscribe(
+    this._productService.addProduct(this.productModel).then(
       data => console.log('success', data),
       error => console.log('Error', error)
     );

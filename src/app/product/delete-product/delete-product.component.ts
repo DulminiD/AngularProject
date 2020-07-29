@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IProduct} from '../shared/product';
-import {ProductService} from '../shared/product.service';
+import {ProductService} from '../shared/services/product.service';
 
 @Component({
   selector: 'app-delete-product',
@@ -21,8 +20,7 @@ export class DeleteProductComponent implements OnInit {
 
   // Submit Button clicked
   onSubmit(): void{
-    console.log(this.id);
     this._productService.deleteProduct(this.id)
-      .subscribe(data => this.product = data);
+      .then(data => this.product = data);
   }
 }

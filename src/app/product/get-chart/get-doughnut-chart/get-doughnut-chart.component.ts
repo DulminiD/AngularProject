@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {IProduct} from '../../shared/product';
-import {ProductService} from '../../shared/product.service';
+import {ProductModel} from '../../shared/models/product-model';
+import {ProductService} from '../../shared/services/product.service';
 
 @Component({
   selector: 'app-get-doughnut-chart',
@@ -13,7 +13,7 @@ export class GetDoughnutChartComponent implements OnInit {
   public doughnutChartLabels = ['Sales Q1', 'Sales Q2', 'Sales Q3', 'Sales Q4'];
   public doughnutChartData = [120, 150, 180, 90];
   public doughnutChartType = 'doughnut';
-  private products: IProduct;
+  private products: ProductModel;
   length = 0;
   xArray = [];
   yArray = [];
@@ -26,7 +26,7 @@ export class GetDoughnutChartComponent implements OnInit {
   ngOnInit(): void {
     this.length = 0;
     this._productService.getProducts()
-      .subscribe(data => {
+      .then(data => {
         this.products = data;
         // @ts-ignore
         for (const len of data) {
